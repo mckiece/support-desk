@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { register, reset } from "../features/auth/authSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
 function Register() {
 	const [formData, setFormData] = useState({
@@ -58,6 +59,10 @@ function Register() {
 			dispatch(register(userData));
 		}
 	};
+
+	if (isLoading) {
+		return <Spinner />;
+	}
 
 	return (
 		<>
