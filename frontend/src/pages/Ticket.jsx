@@ -4,11 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Modal from "react-modal";
 import { getTicket, closeTicket } from "../features/tickets/ticketSlice";
-import {
-	getNotes,
-	createNote,
-	reset as notesReset,
-} from "../features/notes/noteSlice";
+import { getNotes, createNote } from "../features/notes/noteSlice";
 import Spinner from "../components/Spinner";
 import BackButton from "../components/BackButton";
 import NoteItem from "../components/NoteItem";
@@ -33,7 +29,7 @@ function Ticket() {
 	const [modalIsOpen, setModalIsOpen] = useState(false);
 	const [noteText, setNoteText] = useState("");
 
-	const { ticket, isLoading, isSuccess, isError, message } = useSelector(
+	const { ticket, isLoading, isError, message } = useSelector(
 		(state) => state.tickets
 	);
 
@@ -53,7 +49,7 @@ function Ticket() {
 		dispatch(getTicket(ticketId));
 		dispatch(getNotes(ticketId));
 
-		// eslint-diable-next-line
+		// eslint-disable-next-line
 	}, [isError, message, ticketId]);
 
 	// Close ticket

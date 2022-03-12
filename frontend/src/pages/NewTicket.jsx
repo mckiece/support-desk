@@ -31,7 +31,8 @@ function NewTicket() {
 		}
 
 		dispatch(reset());
-	}, [dispatch, isError, isSuccess, navigate, message]);
+		// eslint-disable-next-line
+	}, [isError, isSuccess, navigate, message]);
 
 	const onSubmit = (e) => {
 		e.preventDefault();
