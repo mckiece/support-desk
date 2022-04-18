@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+@import-normalize;
 
 * {
 	margin: 0;
@@ -113,6 +114,7 @@ h3 {
 .form {
 	width: 70%;
 	margin: 0 auto;
+	padding-bottom: 15px;
 }
 
 .form-group {
@@ -146,7 +148,6 @@ h3 {
 	font-weight: 700;
 	cursor: pointer;
 	text-align: center;
-	appearance: button;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -171,6 +172,13 @@ h3 {
 	font-size: 13px;
 }
 
+@media (max-width: 420px) {
+	.btn-sm {
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+	}
+}
+
 .btn-danger {
 	background: darkred;
 	border: none;
@@ -191,21 +199,8 @@ h3 {
 	padding: 50px;
 }
 
-.ticket-number {
-	margin-bottom: 30px;
-}
-
-.ticket-number h2 {
-	font-size: 2.3rem;
-	margin-bottom: 10px;
-}
-
-.ticket-number p {
-	font-size: 1.3rem;
-}
-
-.ticket-info {
-	font-size: 1.3rem;
+.tickets {
+	padding-bottom: 15px;
 }
 
 .ticket,
@@ -222,6 +217,19 @@ h3 {
 	text-align: center;
 }
 
+@media (max-width: 420px) {
+	.ticket,
+	.ticket-headings {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.btn-ticket {
+		grid-column: 1 / 4;
+		margin-left: 4rem;
+		margin-right: 4rem;
+	}
+}
+
 .ticket-headings {
 	font-weight: 700;
 }
@@ -235,6 +243,12 @@ h3 {
 	border-radius: 10px;
 	font-size: 16px;
 	text-align: center;
+}
+
+@media (max-width: 420px) {
+	.ticket-id {
+		font-size: 1.4rem !important;
+	}
 }
 
 .status-new {
@@ -258,12 +272,14 @@ h3 {
 .ticket-page {
 	position: relative;
 	text-align: left;
+	padding-bottom: 15px;
 }
 
 .ticket-page h2 {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .ticket-page .btn {

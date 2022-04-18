@@ -13,6 +13,7 @@ import { FaPlus } from "react-icons/fa";
 const customStyles = {
 	content: {
 		width: "600px",
+		maxWidth: "90vw",
 		top: "50%",
 		left: "50%",
 		right: "auto",
@@ -84,7 +85,7 @@ function Ticket() {
 		<div className="ticket-page">
 			<header className="ticket-header">
 				<BackButton url="/tickets" />
-				<h2>
+				<h2 className="ticket-id">
 					Ticket ID: {ticket._id}
 					<span className={`status status-${ticket.status}`}>
 						{ticket.status}
